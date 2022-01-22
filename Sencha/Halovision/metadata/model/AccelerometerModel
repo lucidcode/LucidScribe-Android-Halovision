@@ -1,0 +1,39 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AccelerometerModel",
+        "designer|userAlias": "AccelerometerModel"
+    },
+    "designerId": "4581cfc4-6f31-4db3-a5c5-5fed0890aa76",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "1a678c08-2e7b-4624-b427-b1f973a4a19e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "x"
+            },
+            "designerId": "9415a212-5092-4e52-ae1a-4b9842dc632b"
+        }
+    ]
+}

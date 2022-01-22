@@ -1,0 +1,201 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "title": "Halovision",
+        "id": "CurrentPanel",
+        "designer|userClassName": "CurrentPanel",
+        "designer|userAlias": "CurrentPanel",
+        "layout": "fit"
+    },
+    "designerId": "715926e8-aed7-4895-bdf7-1114a47ffd2a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "height": null,
+                "id": "AccelerometerChart",
+                "designer|displayName": "AccelerometerChart",
+                "animate": false,
+                "colors": null,
+                "store": "AccelerometerStore"
+            },
+            "designerId": "03cb3785-76f1-461f-b88d-aa3fdc47bb10",
+            "isBuiltIn": true,
+            "iconCls": "icon-line-chart",
+            "autoName": "MyLineChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Category",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "id"
+                        ],
+                        "grid": null,
+                        "title": null
+                    },
+                    "designerId": "ae3f3113-fc3c-4ae3-9de3-58ba8ef59d86"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "x"
+                        ],
+                        "grid": [
+                            "{",
+                            "    odd: {",
+                            "        fill: '#e8e8e8'",
+                            "    }",
+                            "}"
+                        ],
+                        "position": "left",
+                        "title": null
+                    },
+                    "designerId": "fe200e89-1c35-46db-9424-89ba298375e9"
+                },
+                {
+                    "type": "Ext.chart.series.Line",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": null,
+                        "style": [
+                            "{\r",
+                            "    stroke: 'rgb(75, 147, 241)',\r",
+                            "    lineWidth: 2\r",
+                            "}"
+                        ],
+                        "xField": "id",
+                        "yField": "x"
+                    },
+                    "designerId": "1b92d0f7-463c-44bd-b22c-7bd50ca7111e"
+                },
+                {
+                    "type": "Ext.chart.interactions.PanZoom",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "0d1939d7-9b1e-4548-b60f-4c42f2ad2161"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": null,
+                "container|pack": "justify",
+                "docked": "bottom"
+            },
+            "designerId": "ebcd9c5a-e276-4cf5-8193-6729ea89c967",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "WatchButton",
+                        "itemId": "mybutton",
+                        "designer|displayName": "WatchButton",
+                        "iconCls": "time",
+                        "text": "Monitor"
+                    },
+                    "designerId": "7e04ef45-0e2e-4de2-bdf7-3fee31a4f4d2",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onWatchButtonTap",
+                                "implHandler": [
+                                    "Halovision.app.getController(\"MainController\").Watch();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "abe7c046-b730-465d-8fec-c7da7bd94ae1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "SettingsButton",
+                        "itemId": null,
+                        "designer|displayName": "SettingsButton",
+                        "designer|createAlias": null,
+                        "iconCls": "settings",
+                        "text": "Settings"
+                    },
+                    "designerId": "39a33d1a-0205-4b64-a191-905e92fb07db",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSettingsButtonTap",
+                                "implHandler": [
+                                    "Halovision.app.getController(\"MainController\").ShowSettings();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "afbf50b1-1f3e-4668-a009-afbdd9a6c2eb"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

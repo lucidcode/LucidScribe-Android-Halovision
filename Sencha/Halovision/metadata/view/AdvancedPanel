@@ -1,0 +1,237 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "title": "Advanced",
+        "id": "AdvancedPanel",
+        "designer|userClassName": "AdvancedPanel",
+        "designer|userAlias": "AdvancedPanel",
+        "layout": "vbox",
+        "scrollable": "vertical"
+    },
+    "designerId": "8be1ddf7-75e7-4d93-a285-6a281781b512",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": null,
+                "title": null
+            },
+            "designerId": "978e83de-0a82-4c0d-84bf-199d0c5cd426",
+            "cn": [
+                {
+                    "type": "Ext.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<font size=2>Adds highlight color options.</font>",
+                        "itemId": "ColorsField",
+                        "label": "Colors",
+                        "name": "Colors"
+                    },
+                    "designerId": "4fb4694b-3c14-49b2-819e-08e2fe57f4a7",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onColorsFieldChange",
+                                "implHandler": [
+                                    "if (newValue === true)\r",
+                                    "{\r",
+                                    "    Halovision.app.getController(\"MainController\").Purchase(\"Colors\");\r",
+                                    "}\r",
+                                    "if (newValue === false)\r",
+                                    "{\r",
+                                    "    // Reload the settings  \r",
+                                    "    Halovision.app.getController('MainController').LoadingAdvanced = 1;\r",
+                                    "    var advancedPanel = Halovision.app.getController('MainController').getAdvancedPanel();\r",
+                                    "    advancedPanel.setRecord(Halovision.app.getController('MainController').LoadAdvanced());\r",
+                                    "    Halovision.app.getController('MainController').LoadingAdvanced = 0;\r",
+                                    "\r",
+                                    "    Ext.Msg.alert('Already Purchased!', \"Thanks again for your contribution to the search for lucidity.\", Ext.emptyFn);\r",
+                                    "}"
+                                ],
+                                "name": "change"
+                            },
+                            "designerId": "ea3d24eb-e78a-4c3f-8808-a2ab268dbaff"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<font size=2>Calls the \"Lucid Scribe Trigger\" task in the Tasker app.</font>",
+                        "itemId": "TaskerField",
+                        "label": "Tasker",
+                        "name": "Effects"
+                    },
+                    "designerId": "ef4340cb-bc3e-4e55-95f3-6119ca0a2af8",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTaskerFieldChange",
+                                "implHandler": [
+                                    "if (Halovision.app.getController('MainController').LoadingAdvanced === 1)\r",
+                                    "{\r",
+                                    "    console.log('not saving advanced');\r",
+                                    "    return;\r",
+                                    "}\r",
+                                    "\r",
+                                    "console.log('Saving advanced');\r",
+                                    "\r",
+                                    "var advancedPanel = Halovision.app.getController('MainController').getAdvancedPanel();\r",
+                                    "var settings = advancedPanel.getRecord();\r",
+                                    "\r",
+                                    "//Check to see if record set on form, if not then exit\r",
+                                    "if (settings === null) {\r",
+                                    "    console.log('could not find advanced - aborting');\r",
+                                    "    return;\r",
+                                    "}\r",
+                                    "\r",
+                                    "//Now grab values from the form and save them\r",
+                                    "var newValues = advancedPanel.getValues();\r",
+                                    "\r",
+                                    "// Update the current note's fields with form values.\r",
+                                    "settings.set('Effects', newValue);\r",
+                                    "\r",
+                                    "var errors = settings.validate();\r",
+                                    "if (!errors.isValid()) {\r",
+                                    "    Ext.Msg.alert('Save Settings Error!',errors.getByField('title')[0].getMessage(), Ext.emptyFn);\r",
+                                    "    settings.reject();\r",
+                                    "    return; \r",
+                                    "}\r",
+                                    "\r",
+                                    "var store = Ext.getStore('AdvancedStore');\r",
+                                    "\r",
+                                    "store.sync();"
+                                ],
+                                "name": "change"
+                            },
+                            "designerId": "60843f17-8d3e-461f-8134-05b7160b570b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": null,
+                "container|pack": "justify",
+                "docked": "bottom"
+            },
+            "designerId": "e8160426-1698-4573-918c-87d1b61c499c",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "WatchButton2",
+                        "itemId": "mybutton",
+                        "designer|displayName": "WatchButton",
+                        "iconCls": "time",
+                        "text": "Monitor"
+                    },
+                    "designerId": "b57f5b19-9f81-417a-ac19-7f16a9fc1b6d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onWatchButtonTap1",
+                                "implHandler": [
+                                    "Halovision.app.getController(\"MainController\").Watch();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "1dc9f823-f6f8-47b5-a215-2907b76178d7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "ConsumeButton",
+                        "itemId": "mybutton1",
+                        "designer|displayName": "ConsumeButton",
+                        "iconCls": "time",
+                        "text": "Consume"
+                    },
+                    "designerId": "bdb3510a-3c25-42d7-b530-011893a0ea8c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onWatchButtonTap11",
+                                "implHandler": [
+                                    "Halovision.app.getController(\"MainController\").Consume();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "ad6eeed4-a749-4172-b8aa-28d9c0b31812"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

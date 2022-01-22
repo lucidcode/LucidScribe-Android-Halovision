@@ -1,0 +1,30 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "AudioTrackModel",
+        "storeId": "AudioTrackStore",
+        "designer|userClassName": "AudioTrackStore",
+        "designer|userAlias": "AudioTrackStore"
+    },
+    "designerId": "dc6b6d16-968d-4939-91ec-f0c4817909f2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "AudioTrackProxy"
+            },
+            "designerId": "e0231de2-e62b-4bc8-85f1-b28c35e6e3df"
+        }
+    ]
+}

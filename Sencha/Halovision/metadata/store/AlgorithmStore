@@ -1,0 +1,30 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "AlgorithmModel",
+        "storeId": "AlgorithmStore",
+        "designer|userClassName": "AlgorithmStore",
+        "designer|userAlias": "AlgorithmStore"
+    },
+    "designerId": "feb23f0e-a468-4afc-8b73-6de02603309e",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "AlgorithmProxy"
+            },
+            "designerId": "09e1953f-adf2-47be-9329-5eea7c9a5233"
+        }
+    ]
+}

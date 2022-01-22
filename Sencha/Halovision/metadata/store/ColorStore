@@ -1,0 +1,30 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "ColorModel",
+        "storeId": "ColorStore",
+        "designer|userClassName": "ColorStore",
+        "designer|userAlias": "ColorStore"
+    },
+    "designerId": "10ec3531-f6e6-458e-ba66-825cb69b3580",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "ColorProxy"
+            },
+            "designerId": "1e91c4fb-8efa-41a8-a673-1415f901dcac"
+        }
+    ]
+}

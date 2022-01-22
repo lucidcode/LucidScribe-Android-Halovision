@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lucid Scribe - Halovision</title>
+    <link rel="stylesheet" type="text/css" href="sencha-touch.css"/>
+    <script type="text/javascript" src="sencha-touch-all.js"></script>
+    <script type="text/javascript" src="cordova-2.2.0.js"></script>
+    <script type="text/javascript" src="app.js"></script>    
+	<script type="text/javascript" charset="utf-8">
+		// Call onDeviceReady when Cordova is loaded.
+		function onLoad() { alert("onload");
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		// Cordova is loaded and it is now safe to call Cordova methods
+		function onDeviceReady() { alert("device ready start");
+			// Register the event listener
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			alert("device ready stop");
+		}
+
+		// Handle the back button
+		function onBackKeyDown() { 
+			alert("back button clicked");
+		}
+    </script>
+</head>
+<body></body>
+</html>
