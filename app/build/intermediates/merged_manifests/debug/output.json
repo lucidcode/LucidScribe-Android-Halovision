@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "lucidcode.LucidScribe.HaloVision",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "MERGED_MANIFESTS"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 12,
+        "versionName": "1.2",
+        "outputFile": "app-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {
+        "packageId": "lucidcode.LucidScribe.HaloVision",
+        "split": "",
+        "minSdkVersion": "8"
+      }
+    }
+  ]
+}

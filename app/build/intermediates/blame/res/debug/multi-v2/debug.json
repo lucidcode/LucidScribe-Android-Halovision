@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\mcode\\source\\repos\\lucidcode\\LucidScribe-Android-Halovision\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\mcode\\source\\repos\\lucidcode\\LucidScribe-Android-Halovision\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "55",
+                        "endColumns": "45",
+                        "endOffsets": "98"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "47",
+                        "endOffsets": "98"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\mcode\\source\\repos\\lucidcode\\LucidScribe-Android-Halovision\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "109,56",
+                        "endColumns": "47,52",
+                        "endOffsets": "152,104"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "103,151",
+                        "endColumns": "47,52",
+                        "endOffsets": "146,199"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\mcode\\source\\repos\\lucidcode\\LucidScribe-Android-Halovision\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "55",
+                        "endLines": "8",
+                        "endColumns": "10",
+                        "endOffsets": "416"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "204",
+                        "endLines": "11",
+                        "endColumns": "10",
+                        "endOffsets": "559"
+                    }
+                }
+            ]
+        }
+    ]
+}
